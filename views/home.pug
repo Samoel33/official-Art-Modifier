@@ -1,0 +1,59 @@
+extends base
+
+block content
+    .container
+        audio.intro(src="/mp3/Art.mp3" type="audio/mp3" autoplay) 
+        header.header
+            img.logo(src='/img/favicon.png' alt='art Modifiers')
+            .text-heading
+                h1.primary-heading
+                    span.primary-heading-main ART MODIFIERS
+                    span.primary-heading-sub YOUR TALENT,OUR RESPONSIBILITY
+                a.btn.btn-white.btn-animated(href='/about-art') READ ABOUT US
+        main.main
+            section.section-about-artModifiers
+                .main-heading
+                    h2.section-about-artModifiers-heading.margin-bottom-big
+                        | Welcome To Art Modifiers, Read to know what i am about
+                .row
+                    .section-about-artmodifiers--photos
+                        img.pic.pic1(src='/img/favicon.png' alt='art Modifiers')
+                        img.pic.pic2(src='/img/pic2.jpg' alt='art Modifiers')
+                        img.pic.pic3(src='/img/favicon.png' alt='art Modifiers')
+            section.features(id='features_home')
+                .heading-feature.margin-bottom-big
+                    h3.feature-heading
+                        | SEE FOR YOURSELF, TALENT IDENTIFIED
+                .row
+                    .col-1-of-2.margin-bottom-small
+                        .card
+                            .photograph.photograph-front.photo.card-side
+                                .top-dec
+                                    .top-line1.top-lines
+                                    .top-line2.top-lines
+                                    .top-lne3.top-lines
+                                .imagecenter
+                                    img.logo-image(src='/img/favicon.png' alt='logo')
+                                .heading
+                                    h2(class='video_header')
+                                        | Hi I'm gallery, Check me out.
+                                   
+                                .photograp.photograph-back.photo
+                                    a.btn.btn-white.btn-animated.back-image.gallery(href="/gallery") VIEW
+                    .col-1-of-2.margin-bottom-small
+                        .card
+                            .photograph.photograph-front.poem.card-side
+                                .top-dec
+                                    .top-line1.top-lines
+                                    .top-line2.top-lines
+                                    .top-lne3.top-lines
+                                .imagecenter
+                                    img.logo-image(src='/img/favicon.png' alt='logo')
+                                .heading
+                                    h2(class='video_header')
+                                        |Wan't to hear me speak my heart?Click me
+                                .photograp.photograph-back.poem
+                                    a.btn.btn-white.btn-animated.back-image.video(href='/popup-video') Watch
+                        // <div class="bottom-dec">&nbsp;</div>
+    
+            
