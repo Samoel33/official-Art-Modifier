@@ -6,7 +6,7 @@ const lists = document.querySelector(".aboutArtM").href;
 const glass = document.querySelector(".glass");
 
 blog_message.addEventListener("click", () => {
-    if (lists == "/about-art") {
+    if (lists == "http://www.henkseshoka.co.za/about-art") {
         console.log("lets see");
         glass.style.width = "100%";
         glass.style.transform = "translate(0) rotate(0deg)";
@@ -18,7 +18,7 @@ blog_message.addEventListener("click", () => {
     showMessage.classList.toggle("showMessage");
 });
 clothing_message.addEventListener("click", () => {
-    if (lists == "/about-art") {
+    if (lists == "http://www.henkseshoka.co.za/about-art") {
         console.log("lets see");
         glass.style.width = "100%";
         glass.style.transform = "translate(0) rotate(0deg)";
@@ -29,7 +29,7 @@ clothing_message.addEventListener("click", () => {
     }, 3000);
     showMessage.classList.toggle("showMessage");
 });
-if (lists == "/about-art") {
+if (lists == "http://www.henkseshoka.co.za/about-art") {
     console.log("lets see");
     glass.style.width = "100%";
     glass.style.transform = "translate(0) rotate(0deg)";
