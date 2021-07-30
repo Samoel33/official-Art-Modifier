@@ -1,82 +1,79 @@
 @keyframes mainIntop {
-	0% {
-		opacity: 0;
-		transform: translateY(-1rem);
-	}
-	50% {
-		transform: translateY(5rem);
-	}
-	90% {
-		transform: translateY(-0.6rem);
-	}
-	100% {
-		opacity: 100%;
-		transform: translateY(0);
-	}
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    50% {
+        transform: translateY(5rem);
+    }
+    90% {
+        transform: translateY(-0.6rem);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes landing {
+    from {
+        transform: translateX(-200%);
+        opacity: 0;
+        width: 100%;
+        height: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 @keyframes subInbottom {
-	0% {
-		opacity: 0;
-		transform: translateY(1rem);
-	}
-	50% {
-		transform: translateY(-7.5rem);
-	}
-	100% {
-		opacity: 100%;
-		transform: translateY(0);
-	}
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    50% {
+        transform: translateY(-7.5rem);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }
 
 @keyframes buttonInBottom {
-	0% {
-		opacity: 0;
-		transform: translateY(1rem);
-	}
-	100% {
-		opacity: 100%;
-		transform: translateY(0);
-	}
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }
 
 @keyframes subInbottom {
-	0% {
-		opacity: 0;
-		transform: translateY(1rem);
-	}
-	50% {
-		transform: translateY(-7.5rem);
-	}
-	100% {
-		opacity: 100%;
-		transform: translateY(0);
-	}
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    50% {
+        transform: translateY(-7.5rem);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }
-@keyframes cube {
-	// 0% {
-	// 	transform: rotateX(0) rotateY(0);
-	// }
 
-	// 15% {
-	// 	transform: rotateX(90deg);
-	// }
-	// 35% {
-	// 	transform: rotateY(90deg);
-	// }
-	// 55% {
-	// 	transform: rotateX(-90deg);
-	// }
-	// 75% {
-	// 	transform: rotateY(-90deg);
-	// }
-	// 95% {
-	// 	transform: rotateY(-180deg);
-	// }
-	from {
-		transform: perspective(100rem) rotateY(0deg);
-	}
-	to {
-		transform: perspective(100rem) rotateY(360deg);
-	}
+@keyframes cube {
+    from {
+        transform: perspective(100rem) rotateY(0deg);
+    }
+    to {
+        transform: perspective(100rem) rotateY(360deg);
+    }
 }
