@@ -1,0 +1,62 @@
+extends base
+
+block content 
+    .container-blogs 
+        .bubble 
+        .bubble 
+        .bubble 
+        .bubble
+        .bubble  
+        .container-user-info
+            form.form.form-user-data
+                .form__group
+                    label.form__label(for='name') Name
+                    input#name.form__input(type='text', value=`${user.userName}`, required, name='userName')
+                .form__group.ma-bt-md
+                    label.form__label(for='email') Email address
+                    input#email.form__input(type='email', value=`${user.email}`, required, name='email')
+                .form__group.form__photo-upload
+                    img.profilePic(src=`/img/userImage/${user.photo}`, alt='User photo')
+                    input.form__upload(type='file', accept='image/*', id='photo', name='photo')
+                    label(for='photo') Choose new photo
+              
+                .form__group.right
+                    button.btn.btn--small.btn--green Save settings
+        .container-user-resets 
+            form.form.resetPassword
+                .form__group
+                    label.form__label(for='password-current') Current password
+                    input#password-current.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group
+                    label.form__label(for='password') New password
+                    input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group.ma-bt-lg
+                    label.form__label(for='password-confirm') Confirm password
+                    input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group.right
+                    button.btn.btn--small.btn--green.btn--save-password Save password
+
+        .bubble-anim1 
+        .bubble-anim2 
+        .container-blogs-all-blogs
+            h1 ALL OF YOUR BLOGS LISTED🙂
+            .blog-card 
+                if blogs.length>0
+                    each blog in blogs
+                        .blog-container
+                            .blog-body-cont
+                                .blog-photo 
+                                    img.blog-photo-cover(src=`/img/blogCover/${blog.photo}`, alt=`${blog.title}`)
+                                .blog-body
+                                    .blog-body-ts 
+                                        h1= `${blog.title}` 
+                                        h2= `${blog.snippet}`
+                                        p.info= blog.body.slice(0,100) + "..."
+                                    .blog-by
+                                        if blog.user 
+                                            h4= `article created by ${blog.user.userName}`
+                                            h6= `article created on ${blog.createdAt.toLocaleDateString()}`
+                            .blog-container-footer
+                                a.btn(href=`/artmodifiers/blog/blogs/${blog.id}`) Read More
+                else 
+                    h1= `${user.userName} does not have any blog at the moment`

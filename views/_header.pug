@@ -1,34 +1,50 @@
-
-div(class='navigation_check')
-    input#navi-toggle(type='checkbox' class='navigation_check_button ')
-    label(for='navi-toggle' class='label_B burger')
-        .line
-        .line
-        .line
-    .navigation-bar &nbsp;
-    .navigation-links
+header.header 
+    img.logo(src='/img/favicon.png' alt='art Modifiers')
+    .navigation_check
+        input#navi-toggle(type='checkbox' class='navigation_check_button ')
+        label(for='navi-toggle' class='label_B burger')
+            .line
+            .line
+            .line
+        .navigation-bar &nbsp;
+        //- .navigation-links
+    if user 
         ul.navigation-lists
+            li.navigation-item            
+                a.navigation-link(href='/artmodifiers/blog/blogs/user/logout') Logout
+            li.navigation-item           
+                a.navigation-link.blog(href='/artmodifiers/blogs') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-text-document')
+                    |Blogs
+            li.navigation-item 
+                a.navigation-link.user(href='/artmodifiers/blog/blogs/user/me')
+                    img(src=`/img/userImage/${user.photo}`, alt=`${user.userName}`)
+                    span= `Welcome ${user.userName}`
+    else
+        ul.navigation-lists
+            li.navigation-item            
+                a.navigation-link(href='/artmodifiers/homePage') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-home')
+                    |Home
+            li.navigation-item           
+                a.navigation-link.blog(href='/artmodifiers/blogs') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-text-document')
+                    |Blog
             li.navigation-item
-                svg(class='svg_icon home-icon')
-                    use(xlink:href='/img/sprite.svg#icon-home')
-                a.navigation-link(href='/art-Modifiers') Home
+                a.navigation-link.aboutArtM(href='/artmodifiers/about-art') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-open-book')
+                    |About Art
+            li.navigation-item 
+                a.navigation-link.clothing(href='/artmodifiers/shop') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-shopping-bag')   
+                    |Online Shop
             li.navigation-item
-                svg(class='svg_icon home-icon')
-                    use(xlink:href='/img/sprite.svg#icon-text-document')
-                a.navigation-link.blog(href='#') Blog
-
-            li.navigation-item
-                svg(class='svg_icon home-icon')
-                    use(xlink:href='/img/sprite.svg#icon-open-book')
-                a.navigation-link.aboutArtM(href='/about-art') About Art
-            li.navigation-item
-                svg(class='svg_icon home-icon')
-                    use(xlink:href='/img/sprite.svg#icon-shopping-bag')    
-                a.navigation-link.clothing(href='#') clothing Online Shop
-            li.navigation-item
-                svg(class='svg_icon home-icon')
-                    use(xlink:href='/img/sprite.svg#icon-user')
-                a.navigation-link(href='/about-Henk') About Henk
-
-
-                
+                a.navigation-link(href='/artmodifiers/about-Henk') 
+                    svg(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-user')
+                    |About Henk                

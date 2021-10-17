@@ -1,0 +1,76 @@
+extends base
+
+block content 
+    .container-blogs
+        .container-blogs-all-blogs
+            .navigation-blog 
+                a.create(href="/artmodifiers/blog/create-blog") 
+                    svg.like(class='svg_icon home-icon')
+                        use(xlink:href='/img/sprite.svg#icon-pencil')
+                    |Create Blog 
+            .blog-single
+                .blog-single-container
+                    .blog-photo 
+                        img.blog-photo(src=`/img/blogCover/${blog.photo}`, alt="blog cover")
+                    .blog-body 
+                        .blog-body-heading
+                            h2= `article created by ${blog.user.userName}`
+                            h1= `title: ${blog.title}` 
+                            h2= `snippet: ${blog.snippet}` 
+                            h6= `article created on ${blog.createdAt.toLocaleDateString()}`
+                        - const parapraphs = blog.body.split('\n');
+                            each p in parapraphs
+                                p.body__text= p.slice(0,700)
+                    .blog-single-container-footer
+                        a.btn(href='/artmodifiers/blogs') Blogs
+
+                        a.btn(href='#') 
+                            svg.like(class='svg_icon home-icon')
+                                use(xlink:href='/img/sprite.svg#icon-thumbs-up')
+                            |Like   
+                        a.btn.commentBTN(href=`#`)
+                            if blog.comments.length>0
+                                p= blog.comments.length
+                            else 
+                                p= 0 
+                            svg.comment(class='svg_icon home-icon')
+                                use(xlink:href='/img/sprite.svg#icon-bubble2')
+                        a.btn.delete(data-doc=`${blog._id}`)
+                            svg.trash(class='svg_icon home-icon')
+                                use(xlink:href='/img/sprite.svg#icon-trash')
+                            |DELETE POST  
+                    .container-blogs-comments#contain
+                        .container-blogs-comments-nav 
+                            h1 ALL Comments
+                            a.back(href=`/artmodifiers/blog/blogs/${blog.id}`)
+                                svg.like(class='svg_icon home-icon')
+                                    use(xlink:href='/img/sprite.svg#icon-arrow-long-right')
+                                
+                        if blog.comments.length>0
+                            each comment in blog.comments
+                                .comment
+                                    .comment-with
+                                        .commentedByPic 
+                                            img.profilePic(src=`/img/userImage/${user.photo}`, alt=`${user.userName}`)
+                                        .comment-with-reply
+                                            .comment-with-reply-text
+                                                P= `Comment by ${comment.user.userName} on ${blog.createdAt.toLocaleDateString()}`
+                                                p= `comment: ${comment.text}`
+                                            .comment-with-reply-emoj
+                                                a.btn(href='#') 
+                                                    svg.like(class='svg_icon home-icon')
+                                                        use(xlink:href='/img/sprite.svg#icon-thumbs-up')
+                                                a.btn(href='#') 
+                                                    svg.like(class='svg_icon home-icon')
+                                                        use(xlink:href='/img/sprite.svg#icon-sad')
+                                                a.btn(href='#') 
+                                                    svg.like(class='svg_icon home-icon')
+                                                        use(xlink:href='/img/sprite.svg#icon-shocked')
+                                                a.btn(href='#') 
+                                                    svg.like(class='svg_icon home-icon')
+                                                        use(xlink:href='/img/sprite.svg#icon-grin')
+                        else 
+                            p= 'No coments to this article' 
+                        form.form-comment(action=`/artmodifiers/blog/blogs/${blog.id}/comment` method="POST")
+                            input#comment(type='text', name='text',placeholder='Write your public comment here')
+                            button Submit

@@ -6,15 +6,18 @@ html(lang='en')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='/css/style1.css')
     link(rel='shortcut icon' href='/img/favicon.png' type='img/png')
-    title Art Modifiers
+    title Art Modifiers | #{title}
   body
     include _header 
 
     block content 
 
-    include _footer
+    include _chat
     .blog-clothing 
       p.message Sorry! This Feature is coming soon!
-      
-     
-    script(src="../js/index.js")
+    
+    //script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+    //script(src="/js/index.js")
+    //script(src='/js/auth.js')
+    //script(src='/js/alerts.js')
+    script(src='/js/bundle.js')

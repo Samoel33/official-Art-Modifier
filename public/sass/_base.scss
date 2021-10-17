@@ -1,27 +1,35 @@
 :root {
-    --body-color: rgba(0, 0, 0, 0.801);
-    --header-1: rgba(173, 180, 103, 0.63);
-    --header-2: rgba(241, 241, 237, 0.63);
+    --body: #807e7e;
+    --links: rgba(107, 25, 25, 0.78);
+    --header-grey: #5B3F39;
+    --text-color: rgba(255, 255, 255, 0.67);
+    --container: #747272;
+    --body-color: rgba(123, 125, 4, 0.63);
+    --header-1: #C4C4C4;
+    --button: #C4C4C4;
+    --link-active: #211c1c31;
     --white: #fff;
     --gold: gold;
     --brown: brown;
     --grey: grey;
     --silver: silver;
     --black-light: rgba(0, 0, 0, 0.6);
+    --footer: #C4C4C4;
     --navigation-bar: rgba(128, 128, 128, 0.507);
     --siver-opacity: rgba(192, 192, 192, 0.9);
     --button-text-color: rgb(138, 44, 44);
     --gold-shadow: rgba(240, 240, 99, 0.603);
-    --black-body: rgba(0, 0, 0, 0.63);
     --pic-box-shadow: rgba(128, 0, 128, 0.479);
     --card-top-grey-line: rgba(128, 128, 128, 0.68);
 }
 
+$bp-x-large:120em;
 $bp-largest: 75em;
+$bp-larg:61.92em;
 $bp-large: 56.25em;
 $bp-medium: 37.5em;
 $bp-small: 31.25em;
-$bp-smallest: 21.75em;
+$bp-smallest: 28.125em;
 *,
 *::before,
 *::after {
@@ -49,7 +57,54 @@ body {
     overflow-x: hidden;
     font-family: sans-serif;
     font-weight: 400;
-    line-height: 1.7;
-    color: var(--white);
-    background-color: var(--grey);
+    line-height: 1.5;
+    background-color: var(--body);
+}
+
+::-webkit-scrollbar {
+    width: 2em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #747272;
+    border-radius: 100vw;
+    margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--header-grey);
+    border-radius: 100vw;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    // line-height: 1.8;
+}
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9999;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1.6rem 15rem;
+    -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+.alert--success {
+    background-color: #20bf6b;
+}
+
+.alert--error {
+    background-color: #eb4d4b;
 }

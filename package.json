@@ -4,29 +4,54 @@
     "description": "",
     "main": "app.js",
     "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "alert": "^5.0.10",
         "autoprefixer": "^10.3.1",
+        "axios": "^0.21.4",
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
         "compression": "^1.7.4",
         "concat": "^1.0.3",
+        "cookie-parser": "^1.4.5",
+        "crypto": "^1.0.1",
         "dot-env": "0.0.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "express-mongo-sanitize": "^2.1.0",
+        "helmet": "^4.6.0",
+        "hpp": "^0.2.3",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.29.1",
+        "mongoose": "^6.0.3",
         "morgan": "^1.10.0",
+        "multer": "^1.4.3",
         "node-sass": "^6.0.1",
         "npm-run-all": "^4.1.5",
         "path": "^0.12.7",
         "postcss-cli": "^8.3.1",
-        "pug": "^3.0.2"
+        "pug": "^3.0.2",
+        "sharp": "^0.29.1",
+        "validator": "^13.6.0",
+        "xss-clean": "^0.1.1"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "parcel-bundler": "^1.12.5"
+    },
     "scripts": {
-        "dev": "node server.js",
-        "start": "npm-run-all --parallel compile:sass dev ",
-        "start:prod": "NODE_ENV=production nodemon server.js",
-        "start:dev": "NODE_ENV=development nodemon server.js",
+        "dev": "nodemon server.js",
+        "prod": "node server.js",
+        "start:prod": "SET NODE_ENV=production && nodemon server.js",
+        "start": "npm-run-all --parallel compile:sass dev",
         "compile:sass": "node-sass public/sass/main.scss public/css/style1.css -w",
         "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style1.comp.css -o css/style1.prefix.css",
         "compress:css": "node-sass css/style1.prefix.css css/style1.css --output-style compressed",
-        "build:css": "npm-run-all compile:sass prefix:css compress:css"
+        "build:css": "npm-run-all compile:sass prefix:css compress:css",
+        "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+        "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    },
+    "engines": {
+        "node": ">=10.0.0"
     },
     "author": "Samoel Henk",
     "license": "ISC"

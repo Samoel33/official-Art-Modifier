@@ -1,0 +1,24 @@
+extends base
+
+block content
+    .container
+        .circle-top
+        .container-form 
+            form.form.formCreate(action="/artmodifiers/blog/blogs/createBlog" method="POST" enctype='multipart/form-data') 
+                label#blog-cover(for="profile-Picture") Upload Blog Picture 
+                input#profile-Picture(type="file",name="photo",hidden)
+                span Picture Upload is optional
+                label(for='title') Title
+                input#title(type='text', name='title',placeholder='please type title of your blog here', required)
+                .title.error 
+
+                label(for='snippet') Snippet 
+                input#snippet(type='text', name='snippet',placeholder='please type your snippet here, 100 words',maxlength='100',required)
+                .snippet.error 
+
+                label(for='snippet') body
+                textarea#body(name="body", cols="auto", rows="10",placeholder="Write Something",required) 
+                .body.error 
+                
+                button Submit 
+        .circle-bottom

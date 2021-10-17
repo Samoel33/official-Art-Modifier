@@ -1,36 +1,40 @@
 .container {
-    max-width: 120rem;
-    margin: 3rem auto;
-    background-color: var(--silver-opacity);
-    box-shadow: 0 2rem 6rem var(--black-light);
+    max-width: 140rem;
+    height: 85vh;
+    margin: 0rem auto;
+    background-color: var(--footer);
     position: relative;
-    border: 0.2rem solid var(--white);
-    @media only screen and (max-width: $bp-largest) {
-        margin: 0;
-        max-width: 100%;
-        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -40rem -7rem 30rem -27rem var(--header-grey);
+    @media only screen and (min-width: $bp-x-large) {
+        height: 65rem;
+    }
+    @media only screen and (min-width:$bp-larg) {
+        max-width: 140rem;
     }
     @media only screen and (max-width: $bp-medium) {
         margin: 0;
         padding: 0;
+        height: 95rem;
     }
 }
 
 .header {
-    height: 95vh;
-    background-image: linear-gradient(160deg, var(--header-1), var(--header-2));
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 50% 100%, 0 75vh);
+    max-width: 140rem;
+    height: 12rem;
+    margin: 0rem auto;
+    background-color: var(--container);
     display: flex;
-    flex-direction: column;
-    @media only screen and (max-width: 24.75em) {
-        height: 60vh;
-    }
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.2rem 2rem var(--black-light);
 }
 
 .main {
     .section-about-artModifiers {
-        // padding: 20rem 0;
         padding-top: 20rem;
         padding-bottom: 25rem;
         margin-top: -20vh;
@@ -63,5 +67,18 @@
 }
 
 .footer {
-    background-color: var(--black-body);
+    max-width: 140rem;
+    margin: 0rem auto;
+    border: 0.2rem solid var(--white);
+    background-color: var(--container);
+    height: 20rem;
+    box-shadow: 0 2rem 6rem var(--black-light);
+    @media only screen and (max-width: 75em) {
+        height: 15rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+        padding: 0;
+        height: 23rem;
+    }
 }

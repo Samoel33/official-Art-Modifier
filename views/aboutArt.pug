@@ -1,39 +1,68 @@
 extends base
 
 block content 
-    .col-1-of-2.section-about-artmodifiers--header
-        .blue-glass
-            .glass
-                h2.about.margin-bottom-small
-                    | About Art Modifiers
-                p.about1.main
-                    |Art Modifiers was found the year 2019,The company 
-                    |The company partnered or recognized the Most Wanted Production in May 2019 and We menufacture artistic craft and do the following:
-                    p.about1 
+    .section-about-artmodifiers--header
+        .things-we-do
+            .about-art
+                .top-dec
+                    .top-line2.top-lines
+                    .top-lne3.top-lines
+                .what-we-do
+                    h2.about.margin-bottom-small
+                        | What We Do🙂
+                    p.we-do
                         svg(class='svg_icon home-icon')
                             use(xlink:href='/img/sprite.svg#icon-chevron-right')
-                        |We uplift talent of any kind
-                    p.about1 
+                        |We uplift talent of any kind.
+                    p.we-do 
                         svg(class='svg_icon home-icon')
                             use(xlink:href='/img/sprite.svg#icon-chevron-right')
-                        |Help connect with the relevant people 
-                    p.about1
+                        |Help connect with the relevant people.
+                    p.we-do
                         svg(class='svg_icon home-icon')
                             use(xlink:href='/img/sprite.svg#icon-chevron-right') 
-                        |Help you do your company registration
-                    p.about1
+                        |Help you do your company registration.
+                    p.we-do
                         svg(class='svg_icon home-icon')
                             use(xlink:href='/img/sprite.svg#icon-chevron-right') 
-                        |Performing art, Script writing and Directing
-                    p.about1
+                        |Performing art, Script writing and Directing.
+                    p.we-do
                         svg(class='svg_icon home-icon')
                             use(xlink:href='/img/sprite.svg#icon-chevron-right') 
-                        |We do photography, Choreography and most importantly, we tell a true story through art.
-                hr.line1
-
-        .col-1-of-2.service 
-            h3.about.margin-bottom-small 
-                | Our Service and Prices
-            img.service-D(src="/img/service.jpg", alt="service")
-        
-        
+                        |We do photography and Choreography.
+                    p.we-do
+                        svg(class='svg_icon home-icon')
+                            use(xlink:href='/img/sprite.svg#icon-chevron-right') 
+                        |Most importantly, we tell a true story through art.
+            
+            .service 
+                .service-provided
+                    .top-dec
+                        .top-line2.top-lines
+                        .top-lne3.top-lines
+                    .services
+                        h3.about.margin-bottom-small 
+                            | Our Service
+                        img.service-D(src="/img/service.jpg", alt="service")
+        #popup-video.popup-main
+            .row
+                h2 Love Letter    
+                .video-container
+                    video#video(controls)
+                        source(src='/artmodifiers/video' type ="video/mp4")
+        .gallery   
+            h1.primary-heading Photo Gallery
+                span.most-wanted.primary-heading-sub Most Wanted Production 
+            .gallery-photos
+                a.pic(href="#") 
+                    .image.photo1
+                        img(src="/img/left.jpg")
+                a.pic(href="#") 
+                    .image.photo2 
+                        img(src="/img/forward.jpg") 
+                a.pic(href="#")         
+                    .image.photo4 
+                        img(src="/img/handsOn.jpg")
+                a.pic(href="#") 
+                    .image.photo3 
+                        img(src="/img/up.jpg")

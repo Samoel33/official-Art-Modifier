@@ -1,0 +1,38 @@
+extends base
+
+block content 
+    .container-blogs
+        .container-blogs-all-blogs
+            .navigation-blog 
+                a.create(href="/artmodifiers/blog/create-blog") Create Blog 
+                a.create(href="/artmodifiers/signUp") SignUp
+                a.create.getMyAccs View Account
+                if user 
+                    img.profilePic(src=`img/userImage/${user.photo}`, alt="my Image")
+                    span= `Welcome ${user.userName}`
+            .blog-card
+                if results.length>0
+                    each blog in results
+                            .blog-container
+                                .blog-container-userPhoto 
+                                    img.profilePic(src=`/img/userImage/${blog.user.photo}`, alt=`${blog.user.userName}`)
+                                .blog-body-cont
+                                    .blog-photo 
+                                        img.blog-photo-cover(src=`/img/blogCover/${blog.photo}`, alt=`${blog.title}`)
+                                    .blog-body
+                                        .blog-body-ts 
+                                            h1= `${blog.title}` 
+                                            h2= `${blog.snippet}`
+                                            p.info= blog.body.slice(0,100) + "..."
+                                        .blog-by
+                                            if blog.user 
+                                                h4= `article created by ${blog.user.userName}`
+                                        
+                                            h6= `article created on ${blog.createdAt.toLocaleDateString()}`
+                                            .flower-head
+                                .blog-container-footer
+                                    a.btn(href=`/artmodifiers/blog/blogs/${blog.id}`) Read More
+                                    
+                                
+                else 
+                    h1 No blogs added yet, Be the first to add🙂

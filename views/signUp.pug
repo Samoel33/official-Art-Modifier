@@ -1,0 +1,28 @@
+extends base
+
+block content
+    .container 
+        .circle-top
+        .container-form
+            form.form.form-signup 
+                h2#signUp Register Your Account
+                label(for='userName') User Name 
+                input(type='text',name='userName',placeholder='User Name', required)
+                .userName.error
+
+                label(for='email') Email 
+                input(type='email', name='email',placeholder='youremail@example.com', requred)
+                .email.error 
+
+                label(for='password') Password 
+                input(type='password', name='password',placeholder='........',minlength='8',required)
+                .password.error
+
+                label(for='password') Password Confirmation 
+                input(type='password', name='passwordConfirm',placeholder='........',minlength='8',required)
+                .passwordConfirmation.error  
+                button SignUp
+                span#message 
+                    |Have an account already?
+                    a.login(href='/artmodifiers/login') Login 
+        .circle-bottom

@@ -1,0 +1,21 @@
+extends base
+
+block content
+    .container 
+        .circle-top
+        .container-form
+            form.form.form-login
+                img#img(src='/img/favicon.png' alt='art modifiers' width='50' height='50')
+                h2 Login to  share some wisdom and more
+                label(for='email') Email 
+                input#email(type='email', name='email',placeholder='youremail@gmail.com', requred)
+                .email.error 
+
+                label(for='password') Password 
+                input#password(type='password', name='password',placeholder='........',minlength='8',required)
+                .password.error 
+                button Login
+                span#message 
+                    |Not registered, Please Register?
+                    a.login(href='/artmodifiers/signUp') Signup 
+        .circle-bottom
