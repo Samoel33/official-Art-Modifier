@@ -8841,7 +8841,7 @@ var login = /*#__PURE__*/function () {
             _context.next = 3;
             return (0, _axios.default)({
               method: "POST",
-              url: 'http://127.0.0.1:5080/artmodifiers/blog/blogs/user/login',
+              url: '/artmodifiers/blog/blogs/user/login',
               data: {
                 email: email,
                 password: password
@@ -8894,7 +8894,7 @@ var signUp = /*#__PURE__*/function () {
             _context2.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: 'http://127.0.0.1:5080/artmodifiers/blog/blogs/user/signUp',
+              url: '/artmodifiers/blog/blogs/user/signUp',
               data: {
                 userName: userName,
                 email: email,
@@ -8947,7 +8947,7 @@ var getMyAccount = /*#__PURE__*/function () {
             _context3.next = 3;
             return (0, _axios.default)({
               method: "GET",
-              url: "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/me"
+              url: "/artmodifiers/blog/blogs/user/me"
             });
 
           case 3:
@@ -9007,7 +9007,7 @@ var updateSettings = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            url = type === "password" ? "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/updateMyPassword" : "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/updateMe";
+            url = type === "password" ? "/artmodifiers/blog/blogs/user/updateMyPassword" : "/artmodifiers/blog/blogs/user/updateMe";
             _context.next = 4;
             return (0, _axios.default)({
               method: "PATCH",
@@ -9523,7 +9523,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57826" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55950" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

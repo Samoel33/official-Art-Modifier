@@ -5,7 +5,7 @@ export const login = async(email, password) => {
     try {
         const res = await axios({
             method: "POST",
-            url: 'http://127.0.0.1:5080/artmodifiers/blog/blogs/user/login',
+            url: '/artmodifiers/blog/blogs/user/login',
             data: { email, password },
         });
         if (res.data.status === "success") {
@@ -26,7 +26,7 @@ export const signUp = async(userName, email, password, passwordConfirm) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: 'http://127.0.0.1:5080/artmodifiers/blog/blogs/user/signUp',
+            url: '/artmodifiers/blog/blogs/user/signUp',
             data: { userName, email, password, passwordConfirm },
         });
         if (res.data.status === 'success') {
@@ -44,7 +44,7 @@ export const getMyAccount = async() => {
     try {
         const res = await axios({
             method: "GET",
-            url: "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/me",
+            url: "/artmodifiers/blog/blogs/user/me",
         });
         if (res.status === 200) {
             location.assign('/artmodifiers/blog/blogs/user/me');

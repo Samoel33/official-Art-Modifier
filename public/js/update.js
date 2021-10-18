@@ -5,8 +5,8 @@ export const updateSettings = async(data, type) => {
     try {
         const url =
             type === "password" ?
-            "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/updateMyPassword" :
-            "http://127.0.0.1:5080/artmodifiers/blog/blogs/user/updateMe";
+            "/artmodifiers/blog/blogs/user/updateMyPassword" :
+            "/artmodifiers/blog/blogs/user/updateMe";
 
         const res = await axios({
             method: "PATCH",
