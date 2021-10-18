@@ -37,7 +37,7 @@
     },
     "scripts": {
         "dev": "nodemon server.js",
-        "prod": "node server.js",
+        "start": "node server.js",
         "start:prod": "SET NODE_ENV=production && nodemon server.js"
 
     },
