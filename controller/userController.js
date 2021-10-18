@@ -1,6 +1,6 @@
 const multer = require("multer");
 const jwt = require("jsonwebtoken");
-const sharp = require('sharp');
+//const sharp = require('sharp');
 const User = require("../models/user");
 
 const AppError = require("../utils/appError");
@@ -29,19 +29,19 @@ const upload = multer({
     filter: multerFilter,
 });
 exports.uploadPp = upload.single("photo");
-exports.resizeUserPhoto = catchAsync(async(req, res, next) => {
-    if (!req.file) return next();
+// exports.resizeUserPhoto = catchAsync(async(req, res, next) => {
+//     if (!req.file) return next();
 
-    req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
+//     req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
 
-    await sharp(req.file.buffer)
-        .resize(500, 500)
-        .toFormat("jpeg")
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/userImage/${req.file.filename}`);
+//     await sharp(req.file.buffer)
+//         .resize(500, 500)
+//         .toFormat("jpeg")
+//         .jpeg({ quality: 90 })
+//         .toFile(`public/img/userImage/${req.file.filename}`);
 
-    next();
-});
+//     next();
+// });
 const signToken = id => {
     return jwt.sign({ id }, `${process.env.JWT_SECERET_KEY}`, {
         expiresIn: process.env.JWT_EXPIRES_IN,
