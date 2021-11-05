@@ -8,7 +8,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: inset -40rem -7rem 30rem -27rem var(--header-grey);
     @media only screen and (min-width: $bp-x-large) {
         height: 65rem;
     }

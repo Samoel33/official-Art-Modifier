@@ -99,8 +99,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  box-shadow: inset -40rem -7rem 30rem -27rem var(--header-grey); }
+  align-items: center; }
   @media only screen and (min-width: 120em) {
     .container {
       height: 65rem; } }

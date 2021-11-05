@@ -23,7 +23,7 @@ mongoose
     .then(() => {
         console.log("u are connected to your database man!");
     });
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5080;
 const server = app.listen(port, () => {
     console.log(`App running on port ${port}...`);
 });
